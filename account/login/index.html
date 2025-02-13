@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login User</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+      type="module"
+      src="/scripts/authentication/login/login.mjs"
+    ></script>
+  </head>
+
+  <body>
+    <header></header>
+    <main class="bg-backgroundColor text-textColor font-body">
+      <div class="border-b">
+        <h1 class="text-2xl text-center font-heading text-primaryColor">
+          Login To Your User
+        </h1>
+        <form id="login-form" class="flex flex-col items-center">
+          <label for="email" class="hidden">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+            required
+          />
+          <span id="email-error" class="text-sm hidden"
+            >Must be a @stud.noroff.no email</span
+          >
+
+          <label for="password" class="hidden">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+            required
+          />
+          <span id="password-error" class="text-sm hidden"
+            >Password must be at least 8 characters</span
+          >
+
+          <button
+            class="mt-4 py-0.5 px-8 border rounded-2xl bg-primaryColor text-backgroundColor font-heading text-lg hover:font-bold"
+          >
+            Login
+          </button>
+
+          <p>Don´t have an user yet?</p>
+          <a href="">Register here and get 1000 credits</a>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
