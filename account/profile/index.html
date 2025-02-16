@@ -4,10 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/scripts/ui/toggleUserMenu.mjs"></script>
   </head>
   <body>
+    <header class="bg-primaryColor text-backgroundColor font-heading py-4">
+      <div class="flex justify-between items-center px-6">
+        <div>
+          <a href="#" class="text-xl">Eminence</a>
+        </div>
+
+        <div class="relative">
+          <button
+            id="user-menu-button"
+            class="w-12 h-12 flex items-center justify-center rounded-full border border-transparent hover:border-backgroundColor transition-all"
+          >
+            <img src="/assets/user.png" alt="User Icon" class="w-6 h-6" />
+          </button>
+          <nav
+            id="dropdown-menu"
+            class="absolute right-0 mt-2 w-40 bg-primaryColor border border-gray-300 rounded-lg shadow-lg hidden"
+            aria-label="User navigation"
+          >
+            <ul class="flex flex-col">
+              <li>
+                <a
+                  href="/account/profile/"
+                  class="block px-4 py-2 text-sm hover:underline"
+                  >My Profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/account/login/"
+                  class="block px-4 py-2 text-sm hover:underline"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
     <main>
       <h1>This is your Profile :D</h1>
     </main>
+    <footer></footer>
   </body>
 </html>
