@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <script type="module" src="/scripts/ui/toggleUserMenu.mjs"></script>
+    <script type="module" src="/scripts/ui/header.mjs"></script>
   </head>
   <body>
     <header class="bg-primaryColor text-backgroundColor font-heading py-4">
@@ -26,22 +26,7 @@
             class="absolute right-0 mt-2 w-40 bg-primaryColor border border-gray-300 rounded-lg shadow-lg hidden"
             aria-label="User navigation"
           >
-            <ul class="flex flex-col">
-              <li>
-                <a
-                  href="/account/profile/"
-                  class="block px-4 py-2 text-sm hover:underline"
-                  >My Profile</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/account/login/"
-                  class="block px-4 py-2 text-sm hover:underline"
-                  >Logout</a
-                >
-              </li>
-            </ul>
+            <ul id="dropdown-list" class="flex flex-col"></ul>
           </nav>
         </div>
       </div>
