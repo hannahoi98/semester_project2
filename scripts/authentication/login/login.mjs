@@ -1,5 +1,5 @@
 // Imports
-import { AUTH_LOGIN_URL } from "../../constants.mjs";
+import { AUTH_LOGIN_URL } from "../../apiEndpoints.mjs";
 import { isValidEmail, isValidPassword } from "../validate.mjs";
 import { validateInput, attachValidation } from "../formValidations.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
@@ -59,10 +59,18 @@ async function loginUser(userDetails) {
     }
 
     const accessToken = json.data.accessToken;
+    const userName = json.data.name;
+
     if (!accessToken) {
       throw new Error("No access token received. Please try again.");
     }
     addToLocalStorage("accessToken", accessToken);
+
+    if (userName) {
+      addToLocalStorage("userName", userName);
+    } else {
+      console.warn("Username not found in login response.");
+    }
 
     const storedToken = getFromLocalStorage("accessToken");
     if (!storedToken) {

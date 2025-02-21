@@ -1,5 +1,5 @@
 // Imports
-import { AUTH_REGISTER_URL } from "../../constants.mjs";
+import { AUTH_REGISTER_URL } from "../../apiEndpoints.mjs";
 import { isValidEmail, isValidPassword } from "../validate.mjs";
 import { validateInput, attachValidation } from "../formValidations.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
