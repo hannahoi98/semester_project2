@@ -5,15 +5,26 @@ const userMenuButton = document.querySelector("#user-menu-button");
 const dropdownMenu = document.querySelector("#dropdown-menu");
 const dropdownList = document.querySelector("#dropdown-list");
 
-// Function to toggle dropdown menu
+
+/**
+ * Toggles the visibility of the dropdown menu.
+ */
 function toggleDropdown() {
   dropdownMenu.classList.toggle("hidden");
 }
 
-// Function to handle logout and redirect to login-page
+
+/**
+ * Handles user logout with confirmation.
+ * Removes the access token and redirects to the login page upon confirmation.
+ */
 function handleLogout() {
-  removeFromLocalStorage("accessToken");
-  window.location.href = "/account/login/";
+  const confirmLogout = confirm("Are you sure you want to log out?");
+
+  if (confirmLogout){
+    removeFromLocalStorage("accessToken");
+    window.location.href = "/account/login/";
+  }
 }
 
 // Function to create menu items
@@ -35,7 +46,10 @@ function createMenuItem(text, href, isButton = false) {
   return li;
 }
 
-// Function to update the menu based on login status
+
+/**
+ * Updates the dropdown menu based on the user's login status.
+ */
 function updateMenu() {
   dropdownList.innerHTML = "";
 
@@ -54,6 +68,8 @@ function updateMenu() {
 
 // Add event listeners
 userMenuButton.addEventListener("click", toggleDropdown);
+
+// Close dropdown when clicking outside of it
 document.addEventListener("click", (e) => {
   if (!dropdownMenu.contains(e.target) && e.target !== userMenuButton) {
     dropdownMenu.classList.add("hidden");
