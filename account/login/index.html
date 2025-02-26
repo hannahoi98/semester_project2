@@ -9,13 +9,37 @@
       type="module"
       src="/scripts/authentication/login/login.mjs"
     ></script>
+    <script type="module" src="/scripts/ui/header.mjs"></script>
   </head>
+  <body class="bg-backgroundColor text-textColor flex flex-col min-h-screen">
+    <header class="bg-primaryColor text-backgroundColor font-heading py-4">
+      <div class="flex justify-between items-center px-6">
+        <div>
+          <a href="/index.html" class="text-xl">Eminence</a>
+        </div>
 
-  <body>
-    <header></header>
-    <main class="bg-backgroundColor text-textColor font-body">
-      <div class="border-b">
-        <h1 class="text-2xl text-center font-heading text-primaryColor">
+        <div class="relative">
+          <button
+            id="user-menu-button"
+            class="w-12 h-12 flex items-center justify-center rounded-full border border-transparent hover:border-backgroundColor transition-all"
+          >
+            <img src="/assets/user.png" alt="User Icon" class="w-6 h-6" />
+          </button>
+          <nav
+            id="dropdown-menu"
+            class="absolute right-0 mt-2 w-40 bg-primaryColor border border-gray-300 rounded-lg shadow-lg hidden"
+            aria-label="User navigation"
+          >
+            <ul id="dropdown-list" class="flex flex-col"></ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="font-body flex flex-col items-center">
+      <div class="border border-textColor mt-10 px-10 md:px-20 py-6 rounded-lg">
+        <h1
+          class="text-2xl text-center font-heading text-primaryColor border-b border-primaryColor"
+        >
           Login To Your User
         </h1>
         <form id="login-form" class="flex flex-col items-center">
@@ -25,7 +49,7 @@
             name="email"
             type="email"
             placeholder="E-mail"
-            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+            class="mt-8 py-1 px-2 border border-textColor rounded-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
             required
           />
           <span id="email-error" class="text-sm hidden"
@@ -38,7 +62,7 @@
             name="password"
             type="password"
             placeholder="Password"
-            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+            class="mt-6 py-1 px-2 border border-textColor rounded-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
             required
           />
           <span id="password-error" class="text-sm hidden"
@@ -46,16 +70,37 @@
           >
 
           <button
-            class="mt-4 py-0.5 px-8 border rounded-2xl bg-primaryColor text-backgroundColor font-heading text-lg hover:font-bold"
+            class="mt-6 mb-8 py-1 px-10 border rounded-full bg-primaryColor text-backgroundColor font-heading text-lg hover:font-bold drop-shadow-md"
           >
             Login
           </button>
 
           <p>Don´t have an user yet?</p>
-          <a href="">Register here and get 1000 credits</a>
+          <a href="/account/register/" class="border-b border-textColor"
+            >Register Here</a
+          >
         </form>
       </div>
     </main>
-    <footer></footer>
+    <footer class="bg-primaryColor text-backgroundColor mt-auto">
+      <form class="flex flex-col items-center mt-6 mb-6">
+        <label for="email" class="text-lg">Sign Up For The Newsletter</label>
+        <div>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            class="mt-4 py-1 px-2 border-primaryColor border rounded-s-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+          <button
+            class="py-1 px-6 -ml-2 rounded-e-2xl bg-backgroundColor text-primaryColor border-primaryColor border"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </footer>
   </body>
 </html>
