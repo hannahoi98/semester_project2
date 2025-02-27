@@ -1,11 +1,14 @@
 // Imports
 import { API_KEY, AUTH_PROFILE_URL } from "../apiEndpoints.mjs";
 import { getFromLocalStorage } from "../localStorage.mjs";
+import { toggleAvatarForm,updateAvatar } from "./updateAvatar.mjs";
 
 // DOM Elements
 const profileName = document.getElementById("profile-name");
 const profileCredits = document.getElementById("profile-credits");
 const profileMessage = document.getElementById("profile-message");
+const updateAvatarButton = document.getElementById("update-avatar-button");
+const avatarForm = document.getElementById("avatar-form");
 
 /**
  * Fetches the users profile info from the API and updates the page
@@ -50,9 +53,13 @@ async function fetchProfile() {
 
     // Displays profile data
     const data = await response.json();
-
     profileName.textContent = data.data.name;
     profileCredits.textContent = data.data.credits;
+
+    if (data.data.avatar?.url) {
+      document.getElementById("avatar-image").src = data.data.avatar.url;
+      document.getElementById("avatar-image").alt = data.data.avatar.alt;
+    }
   } catch {
     // Handle network or unexpected errors
     displayUserError("Network error. Please try again later.");
@@ -80,3 +87,11 @@ function clearUserError() {
 
 // Call to fetch profile data
 fetchProfile();
+
+
+// Event listener to toggle the visibility of the avatar form
+updateAvatarButton.addEventListener("click", toggleAvatarForm);
+
+
+// Event listener to update/submitting the avatar form
+avatarForm.addEventListener("submit", updateAvatar);

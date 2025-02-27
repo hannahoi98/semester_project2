@@ -34,65 +34,89 @@
     </header>
 
     <main class="text-textColor font-body">
-      <section id="profile-avatar" class="flex flex-col items-center mt-4 mb-4">
-        <img
-          id="avatar-image"
-          src=""
-          alt=""
-          class="w-36 h-36 rounded-full object-cover border border-textColor"
-        />
-
-        <button
-          id="update-avatar-button"
-          class="mt-4 py-0.5 px-8 border rounded-2xl bg-primaryColor text-backgroundColor font-heading text-lg hover:font-bold"
+      <div class="mx-4 md:mx-24">
+        <section
+          id="profile-avatar"
+          class="flex flex-col items-center mt-4 mb-4"
         >
-          Update Picture
-        </button>
+          <img
+            id="avatar-image"
+            src=""
+            alt=""
+            class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border border-textColor"
+          />
+
+          <button
+            id="update-avatar-button"
+            class="mt-4 py-0.5 px-8 border rounded-2xl bg-primaryColor text-backgroundColor font-heading text-lg hover:font-bold"
+          >
+            Update Picture
+          </button>
+        </section>
+
+        <form id="avatar-form" class="flex-col items-center hidden">
+          <label for="avatar-url" class="hidden">Avatar URL</label>
+          <input
+            type="url"
+            id="avatar-url"
+            name="avatar"
+            placeholder="Image URL"
+            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+            required
+          />
+
+          <label for="avatar-alt-text" class="hidden">Avatar Alt Text</label>
+          <input
+            type="text"
+            id="avatar-alt-text"
+            name="avatar-alt-text"
+            placeholder="Image Alt Text"
+            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+            required
+          />
+
+          <button
+            id="update-avatar-button"
+            type="submit"
+            class="mt-4 py-0.5 px-8 border rounded-2xl bg-backgroundColor text-primaryColor border-primaryColor font-heading text-lg hover:font-bold"
+          >
+            Change Picture
+          </button>
+        </form>
+
+        <section class="mb-4 text-center">
+          <h1 id="profile-name" class="text-2xl mb-2">Loading profile...</h1>
+        </section>
+
+        <section id="profile-info" class="mb-4 text-center">
+          <p class="text-lg">
+            Credits: <span id="profile-credits">Loading...</span>
+          </p>
+        </section>
+
+        <p
+          id="profile-message"
+          class="mt-4 text-center text-sm font-semibold"
+        ></p>
+      </div>
+
+      <section>
+        <div class="border-b border-textColor mt-10 mx-4 md:mx-24">
+          <h2>My Listings</h2>
+        </div>
       </section>
 
-      <form id="avatar-form" class="flex flex-col items-center hidden">
-        <label for="avatar-url" class="hidden">Avatar URL</label>
-        <input
-          type="url"
-          id="avatar-url"
-          name="avatar"
-          placeholder="Image URL"
-          class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
-          required
-        />
-
-        <label for="avatar-alt-text" class="hidden">Avatar Alt Text</label>
-        <input
-          type="text"
-          id="avatar-alt-text"
-          name="avatar-alt-text"
-          placeholder="Image Alt Text"
-          class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
-          required
-        />
-
-        <button
-          type="submit"
-          class="mt-4 py-0.5 px-8 border rounded-2xl bg-backgroundColor text-primaryColor border-primaryColor font-heading text-lg hover:font-bold"
-        >
-          Change Picture
-        </button>
-      </form>
-
-      <section class="mb-4 text-center">
-        <h1 id="profile-name" class="text-2xl mb-2">Loading profile...</h1>
+      <section>
+        <div class="border-b border-textColor mt-10 mx-4 md:mx-24">
+          <h2>My Bids</h2>
+        </div>
       </section>
 
-      <section id="profile-info" class="mb-4 text-center">
-        <p class="text-lg">
-          Credits: <span id="profile-credits">Loading...</span>
-        </p>
+      <section>
+        <div class="border-b border-textColor mt-10 mx-4 md:mx-24">
+          <h2>My Wins</h2>
+        </div>
       </section>
-
-      <p
-        id="profile-message"
-        class="mt-4 text-center text-sm font-semibold"
-      ></p>
     </main>
     <footer></footer>
   </body>
