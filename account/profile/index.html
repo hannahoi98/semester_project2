@@ -54,34 +54,36 @@
           </button>
         </section>
 
-        <form id="avatar-form" class="flex-col items-center hidden">
-          <label for="avatar-url" class="hidden">Avatar URL</label>
-          <input
-            type="url"
-            id="avatar-url"
-            name="avatar"
-            placeholder="Image URL"
-            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
-            required
-          />
+        <form id="avatar-form" class="hidden">
+          <div class="flex flex-col items-center">
+            <label for="avatar-url" class="hidden">Avatar URL</label>
+            <input
+              type="url"
+              id="avatar-url"
+              name="avatar"
+              placeholder="Image URL"
+              class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+              required
+            />
 
-          <label for="avatar-alt-text" class="hidden">Avatar Alt Text</label>
-          <input
-            type="text"
-            id="avatar-alt-text"
-            name="avatar-alt-text"
-            placeholder="Image Alt Text"
-            class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
-            required
-          />
+            <label for="avatar-alt-text" class="hidden">Avatar Alt Text</label>
+            <input
+              type="text"
+              id="avatar-alt-text"
+              name="avatar-alt-text"
+              placeholder="Image Alt Text"
+              class="mt-4 p-1 border border-textColor rounded-2xl bg-backgroundColor focus:ring-2 focus:ring-primaryColor"
+              required
+            />
 
-          <button
-            id="update-avatar-button"
-            type="submit"
-            class="mt-4 py-0.5 px-8 border rounded-2xl bg-backgroundColor text-primaryColor border-primaryColor font-heading text-lg hover:font-bold"
-          >
-            Change Picture
-          </button>
+            <button
+              id="update-avatar-button"
+              type="submit"
+              class="mt-4 py-0.5 px-8 border rounded-2xl bg-backgroundColor text-primaryColor border-primaryColor font-heading text-lg hover:font-bold"
+            >
+              Change Picture
+            </button>
+          </div>
         </form>
 
         <section class="mb-4 text-center">

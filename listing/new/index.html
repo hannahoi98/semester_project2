@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Listing</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/scripts/ui/header.mjs"></script>
+  </head>
+  <body class="bg-backgroundColor text-textColor flex flex-col min-h-screen">
+    <header class="bg-primaryColor text-backgroundColor font-heading py-4">
+      <div class="flex justify-between items-center px-6">
+        <div>
+          <a href="#" class="text-xl">Eminence</a>
+        </div>
+
+        <div class="relative">
+          <button
+            id="user-menu-button"
+            class="w-12 h-12 flex items-center justify-center rounded-full border border-transparent hover:border-backgroundColor transition-all"
+          >
+            <img src="/assets/user.png" alt="User Icon" class="w-6 h-6" />
+          </button>
+          <nav
+            id="dropdown-menu"
+            class="absolute right-0 mt-2 w-40 bg-primaryColor border border-gray-300 rounded-lg shadow-lg hidden"
+            aria-label="User navigation"
+          >
+            <ul id="dropdown-list" class="flex flex-col"></ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="font-body flex flex-col items-center">
+      <div
+        class="border border-textColor mt-10 mb-10 px-10 md:px-20 py-6 rounded-lg"
+      >
+        <h1
+          class="text-2xl text-center font-heading text-primaryColor border-b border-primaryColor"
+        >
+          Create New Listing
+        </h1>
+
+        <form id="new-listing-form" class="flex flex-col items-center">
+          <label for="title" class="hidden">Title</label>
+          <input
+            id="title"
+            name="title"
+            placeholder="Title"
+            type="text"
+            class="mt-8 py-1 px-2 border border-textColor rounded-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+
+          <label for="description" class="hidden">Description</label>
+          <input
+            id="description"
+            name="description"
+            placeholder="Description"
+            type="text"
+            class="mt-6 py-1 px-2 border border-textColor rounded-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+
+          <label for="image-url" class="hidden">Image URL</label>
+          <input
+            id="image-url"
+            name="image-url"
+            placeholder="Image URL"
+            type="url"
+            class="mt-6 py-1 px-2 border border-textColor rounded-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+
+          <label for="image-alt-text" class="hidden">Avatar Alt Text</label>
+          <input
+            type="text"
+            id="avatar-alt-text"
+            name="avatar-alt-text"
+            placeholder="Image Alt Text"
+            class="mt-6 py-1 px-2 border border-textColor rounded-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+
+          <label for="deadline" class="hidden">Deadline</label>
+          <input
+            id="deadline"
+            name="deadline"
+            type="date"
+            class="mt-6 py-1 px-7 border border-textColor rounded-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+
+          <button
+            class="mt-6 mb-8 py-1 px-10 border rounded-full bg-primaryColor text-backgroundColor font-heading text-lg hover:font-bold drop-shadow-md"
+          >
+            Create Listing
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer class="bg-primaryColor text-backgroundColor mt-auto">
+      <form class="flex flex-col items-center mt-6 mb-6">
+        <label for="email" class="text-lg">Sign Up For The Newsletter</label>
+        <div>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            class="mt-4 py-1 px-2 border-primaryColor border rounded-s-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+          <button
+            class="py-1 px-6 -ml-2 rounded-e-2xl bg-backgroundColor text-primaryColor border-primaryColor border"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </footer>
+  </body>
+</html>
