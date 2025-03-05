@@ -7,7 +7,98 @@
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Open+Sans+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/scripts/ui/header.mjs"></script>
+    <script type="module" src="/scripts/listings/fetchListings.mjs"></script>
+    <title>Eminence Listings</title>
   </head>
-  <body></body>
+  <body class="bg-backgroundColor text-textColor flex flex-col min-h-screen">
+    <header class="bg-primaryColor text-backgroundColor font-heading py-4">
+      <div class="flex justify-between items-center px-6">
+        <div>
+          <a href="#" class="text-xl">Eminence</a>
+        </div>
+
+        <div class="relative">
+          <button
+            id="user-menu-button"
+            class="w-12 h-12 flex items-center justify-center rounded-full border border-transparent hover:border-backgroundColor transition-all"
+          >
+            <img src="/assets/user.png" alt="User Icon" class="w-6 h-6" />
+          </button>
+          <nav
+            id="dropdown-menu"
+            class="absolute right-0 mt-2 w-40 bg-primaryColor border border-gray-300 rounded-lg shadow-lg hidden"
+            aria-label="User navigation"
+          >
+            <ul id="dropdown-list" class="flex flex-col"></ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex flex-col px-2 md:px-20">
+      <section class="font-heading text-primaryColor mt-8 mb-8">
+        <h1 class="text-xl text-center">Welcome To Eminence Listings</h1>
+        <p class="text-center border-b border-primaryColor mb-2">
+          Lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p>
+      </section>
+
+      <section>
+        <div class="flex flex-col items-center md:flex-row md:justify-between">
+          <div>
+            <ul class="flex flex-row text-center gap-2 text-sm md:text-lg">
+              <li>All Listings</li>
+              <li>Art</li>
+              <li>Fashion</li>
+              <li>Jewlery</li>
+              <li>Vintage</li>
+              <li>Watches</li>
+            </ul>
+          </div>
+          <div>
+            <form id="search-form">
+              <input
+                type="search"
+                id="query"
+                name="q"
+                placeholder="Search..."
+              />
+              <button>Search</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="listings-container" class="grid grid-cols-3 gap-4"></div>
+      </section>
+
+      <section>
+        <div id="pagination" class="flex justify-center mt-4 space-x-2"></div>
+      </section>
+    </main>
+
+    <footer class="bg-primaryColor text-backgroundColor mt-auto">
+      <form class="flex flex-col items-center mt-6 mb-6">
+        <label for="email" class="text-lg">Sign Up For The Newsletter</label>
+        <div>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            class="mt-4 py-1 px-2 border-primaryColor border rounded-s-2xl focus:ring-2 focus:ring-primaryColor drop-shadow-md"
+            required
+          />
+          <button
+            class="py-1 px-6 -ml-2 rounded-e-2xl bg-backgroundColor text-primaryColor border-primaryColor border"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </footer>
+  </body>
 </html>
