@@ -25,12 +25,29 @@ async function fetchListings(page = 1) {
     const data = await response.json();
 
     const now = new Date();
+    now.setHours(0,0,0,0);
 
-    const activeListings = data.data.filter(listing => new Date(listing.endsAt) > now);
+    const activeListings = data.data.filter((listing) => {
+      if (!listing.endsAt) return false; 
 
-    const sortedListings = activeListings.sort((a, b) => new Date(a.endsAt) - new Date(b.endsAt));
+      const endsAtDate = new Date(listing.endsAt);
+      endsAtDate.setHours(0, 0, 0, 0); 
 
-    displayListings(sortedListings);
+      return endsAtDate >= now;
+    });
+
+    if (activeListings.length === 0) {
+      listingsContainer.innerHTML = "";
+
+      const noListingsMessage = document.createElement("p");
+      noListingsMessage.classList.add("mt-4");
+      noListingsMessage.textContent = "No active listings found";
+
+      listingsContainer.appendChild(noListingsMessage);
+    } else {
+      const sortedListings = activeListings.sort((a, b) => new Date(a.endsAt) - new Date(b.endsAt));
+      displayListings(sortedListings);
+    }
 
     setupPagination(data.meta.pageCount, currentPage);
   } catch (error) {
