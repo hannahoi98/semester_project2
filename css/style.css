@@ -931,14 +931,6 @@ video {
     width: 18rem;
   }
 
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:justify-between {
-    justify-content: space-between;
-  }
-
   .md\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;

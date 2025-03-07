@@ -14,53 +14,38 @@ let currentPage = 1;
 
 async function fetchListings(page = 1) {
   try {
-    currentPage = page;
-    const offset = (page - 1) * itemsPerPage;
-
-    const url = `${GET_LISTINGS_URL}?limit=${itemsPerPage}&offset=${offset}`;
+    const url = `${GET_LISTINGS_URL}?limit=${itemsPerPage}&page=${page}&_active=true&sort=created&sortOrder=desc`;
 
     const response = await fetch(url);
     if (!response.ok) throw new Error("Failed to fetch listings.");
 
     const data = await response.json();
 
-    const now = new Date();
-    now.setHours(0,0,0,0);
+    const validListings = data.data.filter((listing) =>
+      listing.title &&
+      listing.description &&
+      listing.media?.length > 0 &&
+      listing.endsAt
+    );
 
-    const activeListings = data.data.filter((listing) => {
-      if (!listing.endsAt) return false; 
-
-      const endsAtDate = new Date(listing.endsAt);
-      endsAtDate.setHours(0, 0, 0, 0); 
-
-      return endsAtDate >= now;
-    });
-
-    if (activeListings.length === 0) {
-      listingsContainer.innerHTML = "";
-
-      const noListingsMessage = document.createElement("p");
-      noListingsMessage.classList.add("mt-4");
-      noListingsMessage.textContent = "No active listings found";
-
-      listingsContainer.appendChild(noListingsMessage);
+    if (validListings.length === 0) {
+      listingsContainer.innerHTML = `<p class="mt-4">No valid listings found</p>`;
     } else {
-      const sortedListings = activeListings.sort((a, b) => new Date(a.endsAt) - new Date(b.endsAt));
-      displayListings(sortedListings);
+      displayListings(validListings);
     }
 
-    setupPagination(data.meta.pageCount, currentPage);
+    const totalListings = data.meta.totalCount || validListings.length;
+    setupPagination(Math.ceil(totalListings / itemsPerPage));
   } catch (error) {
     listingsContainer.textContent = `Error: ${error.message}`;
   }
 }
 
 
-function displayListings(listings) {
-  listingsContainer.innerHTML = "";
 
-  listings.forEach(listing => {
-    const { title, media, endsAt, _count } = listing;
+function displayListings(listings) {
+  listings.forEach((listing) => {
+    const { title, media, endsAt, _count, description } = listing;
 
     const imageUrl = media && media.length > 0 ? media[0].url : "default-image.jpg";
     const imageAlt = media && media.length > 0 ? media[0].alt : "No image available";
@@ -68,17 +53,22 @@ function displayListings(listings) {
     const formattedDate = new Date(endsAt).toLocaleDateString("en-GB");
 
     const listingCard = document.createElement("div");
-    listingCard.classList.add("listing-card", "border", "rounded-lg", "p-4", "shadow-lg");
-
-    const titleElement = document.createElement("h2");
-    titleElement.classList.add("text-xl", "font-bold");
-    titleElement.textContent = title;
+    listingCard.classList.add("listing-card", "border", "border-textColor", "rounded-lg");
 
     const imageElement = document.createElement("img");
-    imageElement.classList.add("w-26", "h-26", "object-cover", "rounded", "mt-2");
+    imageElement.classList.add("max-w-28", "max-h-8", "object-cover", "rounded-lg");
     imageElement.src = imageUrl;
     imageElement.alt = imageAlt;
 
+    const titleElement = document.createElement("h2");
+    titleElement.classList.add("text-lg", "font-heading", "mt-2");
+    titleElement.textContent = title;
+
+    const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("mt-2");
+    descriptionElement.textContent = description;
+
+  
     const bidEndsElement = document.createElement("p");
     bidEndsElement.classList.add("mt-2");
     bidEndsElement.innerHTML = `Bids end: <strong>${formattedDate}</strong>`;
@@ -87,8 +77,9 @@ function displayListings(listings) {
     lastBidElement.classList.add("mt-1");
     lastBidElement.innerHTML = `Last bid: <strong>${_count.bids}</strong>`;
 
-    listingCard.appendChild(titleElement);
     listingCard.appendChild(imageElement);
+    listingCard.appendChild(titleElement);
+    listingCard.appendChild(descriptionElement);
     listingCard.appendChild(bidEndsElement);
     listingCard.appendChild(lastBidElement);
 
@@ -96,10 +87,9 @@ function displayListings(listings) {
   });
 }
 
-function setupPagination(totalCount, currentPage) {
-  paginationContainer.innerHTML = "";
 
-  const totalPages = Math.ceil(totalCount / itemsPerPage);
+function setupPagination(totalPages) {
+  paginationContainer.innerHTML = "";
 
   for (let i = 1; i <= totalPages; i++) {
     const pageButton = document.createElement("button");
