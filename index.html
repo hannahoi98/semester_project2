@@ -9,7 +9,7 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/scripts/ui/header.mjs"></script>
-    <script type="module" src="/scripts/listings/fetchListings.mjs"></script>
+    <script type="module" src="/scripts/index.mjs"></script>
     <title>Eminence Listings</title>
   </head>
   <body class="bg-backgroundColor text-textColor flex flex-col min-h-screen">
@@ -65,7 +65,10 @@
       </section>
 
       <section>
-        <div id="listings-container" class="grid grid-cols-3 gap-4"></div>
+        <div
+          id="listings-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+        ></div>
       </section>
 
       <section>
