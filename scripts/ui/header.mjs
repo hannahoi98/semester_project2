@@ -1,9 +1,10 @@
 import { getFromLocalStorage, removeFromLocalStorage } from "../localStorage.mjs";
 
 // Selecting elements
-const userMenuButton = document.querySelector("#user-menu-button");
+
 const dropdownMenu = document.querySelector("#dropdown-menu");
 const dropdownList = document.querySelector("#dropdown-list");
+const userMenuContainer = document.querySelector("#user-menu-container");
 
 
 /**
@@ -30,17 +31,18 @@ function handleLogout() {
 // Function to create menu items
 function createMenuItem(text, href, isButton = false) {
   const li = document.createElement("li");
+  li.className = "hover:underline";
   if (isButton) {
     const button = document.createElement("button");
     button.textContent = text;
-    button.className = "block w-full text-left px-4 py-2 text-sm hover:underline";
+    button.className = "block w-full px-4 py-2 hover:underline";
     button.addEventListener("click", handleLogout);
     li.appendChild(button);
   } else {
     const link = document.createElement("a");
     link.textContent = text;
     link.href = href;
-    link.className = "block px-4 py-2 text-sm hover:underline";
+    link.className = "block px-4 py-2";
     li.appendChild(link);
   }
   return li;
@@ -57,6 +59,7 @@ function updateMenu() {
 
   if (accessToken) {
     dropdownList.appendChild(createMenuItem("My Profile", "/account/profile/"));
+    dropdownList.appendChild(createMenuItem("New Listing", "/listing/new/"));
     dropdownList.appendChild(createMenuItem("Logout", "", true));
   } else {
     dropdownList.appendChild(createMenuItem("Login", "/account/login/"));
@@ -67,11 +70,11 @@ function updateMenu() {
 }
 
 // Add event listeners
-userMenuButton.addEventListener("click", toggleDropdown);
+userMenuContainer.addEventListener("click", toggleDropdown);
 
 // Close dropdown when clicking outside of it
 document.addEventListener("click", (e) => {
-  if (!dropdownMenu.contains(e.target) && e.target !== userMenuButton) {
+  if (!userMenuContainer.contains(e.target) && !dropdownMenu.contains(e.target)) {
     dropdownMenu.classList.add("hidden");
   }
 });

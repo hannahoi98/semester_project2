@@ -573,6 +573,10 @@ video {
   right: 0px;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -626,6 +630,10 @@ video {
   margin-top: auto;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -650,6 +658,10 @@ video {
   height: 15rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -668,6 +680,10 @@ video {
 
 .w-60 {
   width: 15rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .grid-cols-1 {
@@ -766,6 +782,14 @@ video {
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-10 {
@@ -902,6 +926,10 @@ video {
   font-weight: 700;
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
     var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -915,6 +943,10 @@ video {
 .focus\:ring-primaryColor:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(106 27 27 / var(--tw-ring-opacity, 1));
+}
+
+.group:hover .group-hover\:block {
+  display: block;
 }
 
 @media (min-width: 768px) {

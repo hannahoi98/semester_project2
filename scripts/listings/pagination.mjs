@@ -18,7 +18,7 @@ export function setupPagination(totalListings) {
     const showMoreButton = document.createElement("button");
     showMoreButton.textContent = "Show More";
     showMoreButton.classList.add(
-      "px-6", "py-4", "bg-primaryColor", "font-heading", "text-backgroundColor",
+      "px-6", "py-2", "bg-primaryColor", "font-heading", "text-backgroundColor",
       "text-lg", "rounded-full", "mt-4", "mb-4"
     );
 

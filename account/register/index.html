@@ -15,10 +15,10 @@
     <header class="bg-primaryColor text-backgroundColor font-heading py-4">
       <div class="flex justify-between items-center px-6">
         <div>
-          <a href="/index.html" class="text-xl">Eminence</a>
+          <a href="/" class="text-xl">Eminence</a>
         </div>
 
-        <div class="relative">
+        <div class="relative group" id="user-menu-container">
           <button
             id="user-menu-button"
             class="w-12 h-12 flex items-center justify-center rounded-full border border-transparent hover:border-backgroundColor transition-all"
@@ -30,7 +30,10 @@
             class="absolute right-0 mt-2 w-40 bg-primaryColor border border-gray-300 rounded-lg shadow-lg hidden"
             aria-label="User navigation"
           >
-            <ul id="dropdown-list" class="flex flex-col"></ul>
+            <ul
+              id="dropdown-list"
+              class="flex flex-col items-center text-lg p-2"
+            ></ul>
           </nav>
         </div>
       </div>
@@ -91,7 +94,7 @@
         </form>
       </div>
     </main>
-    <footer class="bg-primaryColor text-backgroundColor mt-auto">
+    <footer class="bg-primaryColor text-backgroundColor mt-auto font-heading">
       <form class="flex flex-col items-center mt-6 mb-6">
         <label for="email" class="text-lg">Sign Up For The Newsletter</label>
         <div>
@@ -104,7 +107,7 @@
             required
           />
           <button
-            class="py-1 px-6 -ml-2 rounded-e-2xl bg-backgroundColor text-primaryColor border-primaryColor border"
+            class="py-1 px-6 -ml-2 rounded-e-2xl bg-backgroundColor text-primaryColor border-primaryColor border hover:font-bold"
           >
             Sign Up
           </button>
