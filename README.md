@@ -1,6 +1,8 @@
 # Semester Project 2 - Auction House Website
+<img width="1468" alt="image" src="https://github.com/user-attachments/assets/2e0c11b9-90fc-4f66-b964-644ad56451c4" />
 
-## Project Overview
+
+## Project Overview 🌟
 
 This project is my submission for the Semester Project 2 in Front-End Development at Noroff School og Technology and Digital Media.
 
@@ -8,19 +10,18 @@ Eminence Listings is a luxury auction platform where users can list items for bi
 
 This project is the front-end for an existing API, developed using TailwindCSS and hosted on Netlify.
 
-## User Stories
+## User Stories 🪄
 
-✅ Register: Users with a stud.noroff.no email can create an account.
-✅ Login & Logout: Secure login/logout functionality.
-✅ Update Avatar: Users can update their profile picture.
-✅ View Credits: Registered users can check their available credits.
-✅ Create Listings: Users can add auctions with a title, description, images, and a deadline.
-✅ Place Bids: Users can bid on auctions listed by other users.
-View Bids: Users can check bids placed on a specific listing (To Be Improved)
-Search Listings: Unregistered users can browse available auctions (Still To Be Implented)
+- ✅ Register: Users with a stud.noroff.no email can create an account. 
+- ✅ Login & Logout: Secure login/logout functionality.
+- ✅ Update Avatar: Users can update their profile picture.
+- ✅ View Credits: Registered users can check their available credits.
+- ✅ Create Listings: Users can add auctions with a title, description, images, and a deadline.
+- ✅ Place Bids: Users can bid on auctions listed by other users.
+- 👩🏽‍💻 View Bids: Users can check bids placed on a specific listing (To Be Improved)
+- 👩🏽‍💻 Search Listings: Unregistered users can browse available auctions (Still To Be Implented)
 
-## Tech Stack Used
-
+## Tech Stack Used 🚀
 - HTML
 - Tailwind CSS
 - Vanilla Javascript
@@ -28,8 +29,10 @@ Search Listings: Unregistered users can browse available auctions (Still To Be I
 - Prettier
 - Husky
 
-## How To Install
+## Link To Deployed Webpage 🌏
+https://hannahoi98-semester-project-2.netlify.app
 
-1. Clone The Repository
-2. Install dependencies (Node, TailwindCSS, Prettier, ESLint and Husky)
-3. Run Locally
+## How To Install 🏅
+1. Clone The Repository And Open With Preferred Text Editor
+2. Install Dependencies (Node, TailwindCSS, Prettier, ESLint and Husky)
+3. Run Locally With Live Server
