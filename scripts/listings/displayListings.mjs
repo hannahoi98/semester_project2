@@ -130,8 +130,8 @@ import { placeBid } from "./placeBid.mjs";
     } else {
       // If the user is not logged in, show a login button
       const loginButton = document.createElement("button");
-      loginButton.textContent = "Please log in to bid";
-      loginButton.classList.add("mt-4", "mb-4", "px-2", "py-2", "bg-primaryColor", "text-backgroundColor", "rounded-full", "font-heading");
+      loginButton.textContent = "Please Login To Bid";
+      loginButton.classList.add("mt-4", "mb-4", "px-2", "py-2", "bg-primaryColor", "text-backgroundColor", "rounded-full", "font-heading", "hover:font-bold");
 
       // Redirect to the login page when the login button is clicked
       loginButton.addEventListener("click", () => {
