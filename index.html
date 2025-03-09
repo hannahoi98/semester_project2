@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover exclusive luxury listings on Eminence. Your premier destination for refined properties and high-end opportunities. Start exploring today!"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Open+Sans+Condensed:wght@300&display=swap"
       rel="stylesheet"
@@ -14,6 +18,24 @@
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/scripts/ui/header.mjs"></script>
     <script type="module" src="/scripts/index.mjs"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/site.webmanifest" />
     <title>Eminence Listings</title>
   </head>
   <body class="bg-backgroundColor text-textColor flex flex-col min-h-screen">
@@ -48,14 +70,18 @@
 
     <main class="flex flex-col px-2 md:px-20">
       <section class="font-heading text-primaryColor text-center mt-8 mb-8">
-        <h1 class="text-2xl">Welcome To Eminence Listings</h1>
-        <p>Curated luxury listings for those who expect the extraordinary.</p>
+        <h1 class="text-2xl mb-2">Welcome To Eminence Listings</h1>
+        <p class="underline">
+          Curated luxury listings for those who expect the extraordinary
+        </p>
       </section>
 
       <section>
-        <div class="flex justify-between border-b border-textColor mb-4">
+        <div class="flex justify-between mt-4 mb-4">
           <div>
-            <h2 class="font-heading text-lg md:text-xl">Newest Listings</h2>
+            <h2 class="font-heading text-lg md:text-xl underline">
+              Newest Listings
+            </h2>
           </div>
         </div>
       </section>
@@ -73,7 +99,10 @@
     </main>
 
     <footer class="bg-primaryColor text-backgroundColor mt-8 font-heading">
-      <form class="flex flex-col items-center mt-6 mb-6">
+      <form
+        class="flex flex-col items-center mt-6 mb-6"
+        onsubmit="alert('You have successfully signed up!');"
+      >
         <label for="email" class="text-lg">Sign Up For The Newsletter</label>
         <div>
           <input

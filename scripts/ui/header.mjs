@@ -31,7 +31,6 @@ function handleLogout() {
 // Function to create menu items
 function createMenuItem(text, href, isButton = false) {
   const li = document.createElement("li");
-  li.className = "hover:underline";
   if (isButton) {
     const button = document.createElement("button");
     button.textContent = text;
@@ -42,7 +41,7 @@ function createMenuItem(text, href, isButton = false) {
     const link = document.createElement("a");
     link.textContent = text;
     link.href = href;
-    link.className = "block px-4 py-2";
+    link.className = "block px-4 py-2 hover:underline";
     li.appendChild(link);
   }
   return li;

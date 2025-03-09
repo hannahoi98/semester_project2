@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <meta
+      name="description"
+      content="Manage your luxury listings and account settings with ease. Your Eminence profile keeps all your exclusive items in one place."
+    />
+    <title>My Profile - Eminence Listings</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/site.webmanifest" />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/scripts/ui/header.mjs"></script>
     <script type="module" src="/scripts/profile/profile.mjs"></script>
@@ -12,7 +34,7 @@
     <header class="bg-primaryColor text-backgroundColor font-heading py-4">
       <div class="flex justify-between items-center px-6">
         <div>
-          <a href="/" class="text-3xl md:text-4xl font-logo"
+          <a href="/" class="text-xl md:text-2xl font-logo"
             >Eminence Listings</a
           >
         </div>
@@ -60,7 +82,7 @@
         </section>
 
         <form id="avatar-form" class="hidden">
-          <div class="flex flex-col items-center">
+          <div class="flex flex-col items-center mb-4">
             <label for="avatar-url" class="hidden">Avatar URL</label>
             <input
               type="url"
@@ -139,6 +161,7 @@
           />
           <button
             class="py-1 px-6 -ml-2 rounded-e-2xl bg-backgroundColor text-primaryColor border-primaryColor border hover:font-bold"
+            onsubmit="alert('You have successfully signed up!');"
           >
             Sign Up
           </button>

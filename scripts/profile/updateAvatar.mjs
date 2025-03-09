@@ -13,10 +13,11 @@ const profileMessage = document.getElementById("profile-message");
 
 
 /**
- * Toggles the visibility of the avatar update form.
+ * Toggles the visibility of the avatar update form and changes button text
  */
 function toggleAvatarForm() {
-  avatarForm.classList.toggle("hidden");
+  const isHidden = avatarForm.classList.toggle("hidden");
+  updateAvatarButton.textContent = isHidden ? "Update Avatar" : "Close Form";
 }
 
 
