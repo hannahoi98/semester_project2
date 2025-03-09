@@ -573,10 +573,6 @@ video {
   right: 0px;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -630,10 +626,6 @@ video {
   margin-top: auto;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .flex {
   display: flex;
 }
@@ -658,10 +650,6 @@ video {
   height: 15rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -680,10 +668,6 @@ video {
 
 .w-60 {
   width: 15rem;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .grid-cols-1 {
@@ -788,10 +772,6 @@ video {
   padding: 0.5rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -853,6 +833,10 @@ video {
     serif;
 }
 
+.font-logo {
+  font-family: Waterfall, cursive;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -871,6 +855,16 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-semibold {
@@ -926,10 +920,6 @@ video {
   font-weight: 700;
 }
 
-.hover\:underline:hover {
-  text-decoration-line: underline;
-}
-
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
     var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -943,10 +933,6 @@ video {
 .focus\:ring-primaryColor:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(106 27 27 / var(--tw-ring-opacity, 1));
-}
-
-.group:hover .group-hover\:block {
-  display: block;
 }
 
 @media (min-width: 768px) {
@@ -970,6 +956,16 @@ video {
   .md\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

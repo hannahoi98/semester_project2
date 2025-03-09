@@ -12,6 +12,7 @@ module.exports = {
       fontFamily: {
         heading: ["Bodoni Moda", "serif"],
         body: ["Open Sans Condensed", "sans-serif"],
+        logo: ["Waterfall", "cursive"],
       },
     },
   },
