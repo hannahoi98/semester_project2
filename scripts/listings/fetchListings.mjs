@@ -51,7 +51,3 @@ export function getCurrentPage() {
 export function setCurrentPage(page) {
   currentPage = page;
 }
-
-
-
-

@@ -1,32 +1,35 @@
-// Imports
 import { AUTH_LOGIN_URL } from "../../apiEndpoints.mjs";
 import { isValidEmail, isValidPassword } from "../validate.mjs";
 import { validateInput, attachValidation } from "../formValidations.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
 
-// Local Storage
+/**
+ * Save a value to localStorage.
+ * @param {string} key
+ * @param {string} value
+ */
 function addToLocalStorage(key, value) {
   localStorage.setItem(key, value);
 }
 
+/**
+ * Read a value from localStorage.
+ * @param {string} key
+ * @returns {string|null}
+ */
 function getFromLocalStorage(key) {
   return localStorage.getItem(key)
 }
 
-// Form, Input and Span elements
 const loginForm = document.querySelector("#login-form");
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const emailError = document.querySelector("#email-error");
 const passwordError = document.querySelector("#password-error");
 
-
-//Attaching Validation To Inputs
 attachValidation(emailInput, isValidEmail, emailError);
 attachValidation(passwordInput, isValidPassword, passwordError);
 
-
-// Creating a container for success/error messages
 const messageContainer = document.createElement("p");
 messageContainer.classList.add("text-md", "mt-4", "hidden");
 loginForm.appendChild(messageContainer);
@@ -77,24 +80,18 @@ async function loginUser(userDetails) {
       throw new Error("Failed to store access token. Please try again.");
     }
 
-    // Display Success message
     displayMessage(messageContainer, "Login successful! Redirecting to your profile...", "success");
 
-    // Redirects user to log in page after successful registration
     setTimeout(() => {
       window.location.href = "/account/profile"; 
     }, 2000);
 
   } catch (error) {
-    // Display error message
     displayMessage(messageContainer, error.message, "error");
-
-    // Clear Input fields on failure
     emailInput.value = "";
     passwordInput.value = "";
   }
 }
-
 
 /**
  * Handles form submission for login.
@@ -120,5 +117,4 @@ function onLoginFormSubmit(event) {
   loginUser(formFields);
 }
 
-// Checking for Form Submission
 loginForm.addEventListener("submit", onLoginFormSubmit);
