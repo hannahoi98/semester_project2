@@ -52,7 +52,7 @@ import { placeBid } from "./placeBid.mjs";
     /**
     * Auth-gated UI:
     * - Logged in (accessToken present): render an inline bid form with amount input + submit.
-    * - Logged out: render a "Please Login To Bid" button that redirects to /account/login.
+    * - Logged out: render a "Please Log in To Bid" button that redirects to /account/login.
     */
     const accessToken = getFromLocalStorage("accessToken");
 
@@ -118,7 +118,7 @@ import { placeBid } from "./placeBid.mjs";
       listingCard.appendChild(bidForm);
     } else {
       const loginButton = document.createElement("button");
-      loginButton.textContent = "Please Login To Bid";
+      loginButton.textContent = "Please Log In To Bid";
       loginButton.classList.add("mt-4", "mb-4", "px-2", "py-2", "bg-primaryColor", "text-backgroundColor", "rounded-full", "font-heading", "hover:font-bold");
 
       loginButton.addEventListener("click", () => {
