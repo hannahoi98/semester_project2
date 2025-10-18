@@ -34,17 +34,17 @@ Prerequisites
 
 ### Installing
 1. clone the repo
-git clone https://github.com/hannahoi98/semester_project2.git
-cd semester_project2
+- git clone https://github.com/hannahoi98/semester_project2.git
+- cd semester_project2
 
 2. install dependencies
-npm install
+- npm install
 
 ### Running
-npm run dev
+- npm run dev
 
 ### Building (optional)
-npm run build
+- npm run build
 
 ## Contributing ⚡️
 1. Fork the repo
