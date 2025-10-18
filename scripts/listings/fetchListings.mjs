@@ -1,17 +1,18 @@
-// Imports
 import { GET_LISTINGS_URL } from "../apiEndpoints.mjs";
 import { displayListings } from "./displayListings.mjs";
 import { setupPagination } from "./pagination.mjs";
 
-
-// Settings for pagination
+/** Number of items per page for listings pagination. */
 const itemsPerPage = 12;
+/** Current page index (1-based). */
 let currentPage = 1;
 
-
 /**
- * Fetches active listings from the API and displays them.
- * @param {number} [page=1] - The page number to fetch.
+ * Fetch active listings and render them.
+ * Filters out listings missing required fields, renders a fallback message
+ * when the first page is empty, and wires pagination using totalCount.
+ *
+ * @param {number} [page=1] - Page number to fetch (1-based).
  * @returns {Promise<void>}
  */
 export async function fetchListings(page = 1) {
@@ -23,7 +24,6 @@ export async function fetchListings(page = 1) {
 
     const data = await response.json();
 
-    // Filter out listings with missing required fields
     const validListings = data.data.filter((listing) =>
       listing.title &&
       listing.description &&
@@ -44,14 +44,15 @@ export async function fetchListings(page = 1) {
   }
 }
 
+/** Get the current listings page (1-based). */
 export function getCurrentPage() {
   return currentPage;
 }
 
+/**
+ * Set the current listings page (1-based).
+ * @param {number} page
+ */
 export function setCurrentPage(page) {
   currentPage = page;
 }
-
-
-
-

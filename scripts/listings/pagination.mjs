@@ -1,17 +1,23 @@
-// Imports
 import { fetchListings, getCurrentPage, setCurrentPage } from "./fetchListings.mjs";
 
 /**
- * Sets up the "Show More" pagination button.
- * @param {number} totalPages - The total number of pages available.
- * @param {Function} fetchListings - The function to fetch listings.
+ * Render a "Show More" pagination control and wire it to fetch the next page.
+ *
+ * Calculates total pages from the total number of listings and a fixed
+ * items-per-page value, then shows a button if more pages are available.
+ *
+ * @param {number} totalListings - Total number of listings across all pages.
  */
 export function setupPagination(totalListings) {
+  /** @type {HTMLElement|null} */
   const paginationContainer = document.getElementById("pagination");
   paginationContainer.innerHTML = "";
 
+  /** @type {number} */
   const itemsPerPage = 12;
+  /** @type {number} */
   const totalPages = Math.ceil(totalListings / itemsPerPage);
+  /** @type {number} */
   let currentPage = getCurrentPage();
 
   if (currentPage < totalPages) {
@@ -30,4 +36,3 @@ export function setupPagination(totalListings) {
     paginationContainer.appendChild(showMoreButton);
   }
 }
-

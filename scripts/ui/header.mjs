@@ -1,34 +1,33 @@
 import { getFromLocalStorage, removeFromLocalStorage } from "../localStorage.mjs";
 
-// Selecting elements
-
+/** @type {HTMLElement|null} */
 const dropdownMenu = document.querySelector("#dropdown-menu");
+/** @type {HTMLElement|null} */
 const dropdownList = document.querySelector("#dropdown-list");
+/** @type {HTMLElement|null} */
 const userMenuContainer = document.querySelector("#user-menu-container");
 
-
-/**
- * Toggles the visibility of the dropdown menu.
- */
+/** Toggle the visibility of the user dropdown. */
 function toggleDropdown() {
   dropdownMenu.classList.toggle("hidden");
 }
 
-
-/**
- * Handles user logout with confirmation.
- * Removes the access token and redirects to the login page upon confirmation.
- */
+/** Confirm and log the user out; clears token and redirects to login. */
 function handleLogout() {
   const confirmLogout = confirm("Are you sure you want to log out?");
-
   if (confirmLogout){
     removeFromLocalStorage("accessToken");
     window.location.href = "/account/login/";
   }
 }
 
-// Function to create menu items
+/**
+ * Create a menu item (link or button).
+ * @param {string} text - Visible label.
+ * @param {string} href - Link target (ignored for button).
+ * @param {boolean} [isButton=false] - If true, renders a logout button.
+ * @returns {HTMLLIElement}
+ */
 function createMenuItem(text, href, isButton = false) {
   const li = document.createElement("li");
   if (isButton) {
@@ -47,10 +46,7 @@ function createMenuItem(text, href, isButton = false) {
   return li;
 }
 
-
-/**
- * Updates the dropdown menu based on the user's login status.
- */
+/** Populate dropdown options based on auth state. */
 function updateMenu() {
   dropdownList.innerHTML = "";
 
@@ -68,15 +64,15 @@ function updateMenu() {
   dropdownMenu.appendChild(dropdownList);
 }
 
-// Add event listeners
+/** Open/close on avatar/menu click. */
 userMenuContainer.addEventListener("click", toggleDropdown);
 
-// Close dropdown when clicking outside of it
+/** Close when clicking outside the menu. */
 document.addEventListener("click", (e) => {
   if (!userMenuContainer.contains(e.target) && !dropdownMenu.contains(e.target)) {
     dropdownMenu.classList.add("hidden");
   }
 });
 
-// Call the menu updater immediately
+/** Initialize dropdown content. */
 updateMenu();

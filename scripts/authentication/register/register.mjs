@@ -1,11 +1,8 @@
-// Imports
 import { AUTH_REGISTER_URL } from "../../apiEndpoints.mjs";
 import { isValidEmail, isValidPassword } from "../validate.mjs";
 import { validateInput, attachValidation } from "../formValidations.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
 
-
-// Form, Input and Span elements
 const registerForm = document.querySelector("#register-form");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
@@ -13,17 +10,12 @@ const passwordInput = document.querySelector("#password");
 const emailError = document.querySelector("#email-error");
 const passwordError = document.querySelector("#password-error");
 
-
-//Attaching Validation To Inputs
 attachValidation(emailInput, isValidEmail, emailError);
 attachValidation(passwordInput, isValidPassword, passwordError);
 
-
-// Creating a container for success/error messages
 const messageContainer = document.createElement("p");
 messageContainer.classList.add("text-md", "mt-4", "hidden");
 registerForm.appendChild(messageContainer);
-
 
 /**
  * Sends a request to register a new user.
@@ -51,25 +43,19 @@ async function registerUser(userDetails) {
       throw new Error(result.message || "Registration failed. Please try again.");
     }
 
-    // Display Success message
     displayMessage(messageContainer, "Registration successful! Redirecting to login...", "success");
 
-    // Redirects user to log in page after successful registration
     setTimeout(() => {
       window.location.href = "/account/login/index.html"; 
     }, 2000);
 
   } catch (error) {
-    // Display error message
     displayMessage(messageContainer, error.message, "error");
-
-    // Clear Input fields on failure
     nameInput.value = "";
     emailInput.value = "";
     passwordInput.value = "";
   }
 }
-
 
 /**
  * Handles form submission for registration.
@@ -92,5 +78,4 @@ function onRegisterFormSubmit(event) {
   registerUser(formFields);
 }
 
-// Checking for Form Submission
 registerForm.addEventListener("submit", onRegisterFormSubmit);
