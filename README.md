@@ -1,38 +1,59 @@
-# Semester Project 2 - Auction House Website
-<img width="1468" alt="image" src="https://github.com/user-attachments/assets/2e0c11b9-90fc-4f66-b964-644ad56451c4" />
+# Eminence Listings: Auction House (Semester Project 2) 💎
+<img width="2940" height="1358" alt="image" src="https://github.com/user-attachments/assets/c9b62795-879b-417a-b24d-b413f2601498" />
+A front-end auction platform where registered users can create listings and place bids. Built for the Semester Project 2 in the Front-End Development program at Noroff School of Technology and Digital Media.
 
-
-## Project Overview 🌟
-
-This project is my submission for the Semester Project 2 in Front-End Development at Noroff School og Technology and Digital Media.
-
+## Project Description 🌟
 Eminence Listings is a luxury auction platform where users can list items for bidding and place bids on other listings. Users start with 1000 credits and can earn more by selling items or spending credits to place bids. The platform ensures an engaging and competitive experience for registered users while allowing non-registered users to browse listings.
-
 This project is the front-end for an existing API, developed using TailwindCSS and hosted on Netlify.
 
-## User Stories 🪄
+### What Users Can Do 🏅
+- Register with a stud.noroff.no email
+- Log in / log out
+- View available credits
+- Update profile avatar
+- Create listings (title, description, image, end date)
+- Place bids on listings
 
-- ✅ Register: Users with a stud.noroff.no email can create an account. 
-- ✅ Login & Logout: Secure login/logout functionality.
-- ✅ Update Avatar: Users can update their profile picture.
-- ✅ View Credits: Registered users can check their available credits.
-- ✅ Create Listings: Users can add auctions with a title, description, images, and a deadline.
-- ✅ Place Bids: Users can bid on auctions listed by other users.
-- 👩🏽‍💻 View Bids: Users can check bids placed on a specific listing (To Be Improved)
-- 👩🏽‍💻 Search Listings: Unregistered users can browse available auctions (Still To Be Implented)
+### Pages 👩🏽‍💻
+- / – Listings (browse & bid)
+- /account/register/ – Register
+- /account/login/ – Login
+- /account/profile/ – Profile (credits, avatar)
+- /listing/new/ – Create listing
 
 ## Tech Stack Used 🚀
-- HTML
+- HTML5
 - Tailwind CSS
 - Vanilla Javascript
-- ESLint
-- Prettier
-- Husky
+- ESLint, Prettier, Husky (dev tooling)
 
-## Link To Deployed Webpage 🌏
-https://hannahoi98-semester-project-2.netlify.app
+## How To Install 🪄
+Prerequisites
+- Node.js
+- A static server (ex. Live server extension in VS Code)
 
-## How To Install 🏅
-1. Clone The Repository And Open With Preferred Text Editor
-2. Install Dependencies (Node, TailwindCSS, Prettier, ESLint and Husky)
-3. Run Locally With Live Server
+### Installing
+1. clone the repo
+git clone https://github.com/<your-username>/semester-project-2.git
+cd semester-project-2
+
+2. install dependencies
+npm install
+
+### Running
+Start Tailwind/dev tooling
+npm run dev
+
+### Building (optional)
+npm run build
+
+## Contributing ⚡️
+1. Fork the repo
+2. Create a feature branch: git checkout -b feat/your-branch
+3. Commit with clear messages
+4. Open a Pull Request
+
+## Contact ✉️
+E-mail: hannahoeidahl@gmail.com 
+LinkedIn: www.linkedin.com/in/hanna-høidahl-94b5b316b
+
