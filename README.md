@@ -41,7 +41,6 @@ cd semester_project2
 npm install
 
 ### Running
-Start Tailwind/dev tooling
 npm run dev
 
 ### Building (optional)
