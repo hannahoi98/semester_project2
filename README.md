@@ -34,8 +34,8 @@ Prerequisites
 
 ### Installing
 1. clone the repo
-git clone https://github.com/<your-username>/semester-project-2.git
-cd semester-project-2
+git clone https://github.com/hannahoi98/semester_project2.git
+cd semester_project2
 
 2. install dependencies
 npm install
